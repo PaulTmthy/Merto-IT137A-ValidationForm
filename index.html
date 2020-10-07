@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merto_Login Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    
+</head>
+<body>
+    <div class="container-fluid bg">
+        <div class="row">
+            <div class="col-md-4 col-sm-4-xs-12"></div>
+                <form class="form-container" novalidate>
+                  <h3>Student Login Form</h3>  
+                
+                     <form id="myform">
+                      
+                        <div class="form-group">
+                         <label for="validationCustom01">First name</label>
+                         <input type="text" class="form-control" id="mymin" value="" required>
+                        </div>
+                       
+                       <div class="form-group">
+                         <label for="validationCustom02">Last name</label>
+                         <input type="text" class="form-control" id="mymin1" value="" required>
+                       </div>
+
+                         <div class="form-group">
+                           <label for="validationCustom04">Email address</label>
+                           <input type="text" class="form-control" id="myemail" value=""required>
+                         </div>
+                        
+                       <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" id="mypassword" value="" required>
+                       </div>
+
+                       <div class="form-group">
+                        <label for="passwordConfirm">RetypePassword</label>
+                        <input type="text" class="form-control" id="passwordConfirm" value="" required>
+                       </div>
+                     
+                     <div class="form-group">
+                       <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                         <label class="form-check-label" for="invalidCheck">
+                           Agree to terms and conditions
+                         </label>
+                         <div class="invalid-feedback">
+                           You must agree before submitting.
+                         </div>
+                       </div>
+                      </div>
+                      
+                    <button type="submit" class="btn btn-success btn-block" id="add">Submit</button>
+                  </form>
+                  </form>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+    <script src="./bootstrap-validate.js"></script>
+    <script>  
+     
+        bootstrapValidate('#mymin','min:5:Enter at least 5 Characters')
+        bootstrapValidate('#mymin1','min:5:Enter at least 5 Characters')
+        bootstrapValidate('#myemail','email:Enter a valid email address')
+        bootstrapValidate('#passwordConfirm','matches:#mypassword: Your passwords should match')
+        bootstrapValidate('#add','add:Fill up')  
+    
+    </script>
+    
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('form-container');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                alert("Please Fill the form Correctly");
+             
+              } else{
+                alert('Registered!!')
+              }
+             
+            }, false);
+          });
+        }, false);
+      })();
+          </script>
+        
+      
+  </body>
+
+</html>
